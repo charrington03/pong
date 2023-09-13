@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2v14mjlejaab"]
+
+[ext_resource type="Script" path="res://wall/wall.gd" id="1_lpw65"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_r0avs"]
+
+[node name="Wall" type="RigidBody2D"]
+gravity_scale = 0.0
+lock_rotation = true
+script = ExtResource("1_lpw65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_r0avs")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

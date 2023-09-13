@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://0tlk2lbc6beo"]
+
+[ext_resource type="Script" path="res://game/game.gd" id="1_k2hej"]
+[ext_resource type="Texture2D" uid="uid://c3pw0s4tesilp" path="res://assets/art/background.png" id="2_rjb11"]
+[ext_resource type="PackedScene" uid="uid://vlyt1cfibahx" path="res://paddle/paddle.tscn" id="3_y7g0l"]
+[ext_resource type="PackedScene" uid="uid://b3i2hwf2b8uf6" path="res://goal/goal.tscn" id="4_k0ndr"]
+[ext_resource type="PackedScene" uid="uid://d2v14mjlejaab" path="res://wall/wall.tscn" id="5_df4gl"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_k2hej")
+
+[node name="BgSprite" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_rjb11")
+metadata/_edit_lock_ = true
+
+[node name="ScoreLabelLeft" type="Label" parent="."]
+offset_left = 314.0
+offset_top = 33.0
+offset_right = 354.0
+offset_bottom = 59.0
+text = "0"
+
+[node name="ScoreLabelRight" type="Label" parent="."]
+offset_left = 760.0
+offset_top = 35.0
+offset_right = 800.0
+offset_bottom = 61.0
+text = "0"
+horizontal_alignment = 2
+
+[node name="PaddleLeft" parent="." instance=ExtResource("3_y7g0l")]
+position = Vector2(162, 313)
+up_action = "left_up"
+down_action = "left_down"
+
+[node name="PaddleRight" parent="." instance=ExtResource("3_y7g0l")]
+position = Vector2(919, 328)
+up_action = "right_up"
+down_action = "right_down"
+
+[node name="GoalLeft" parent="." instance=ExtResource("4_k0ndr")]
+
+[node name="GoalRight" parent="." instance=ExtResource("4_k0ndr")]
+position = Vector2(1152, 0)
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="WallTop" parent="Walls" instance=ExtResource("5_df4gl")]
+position = Vector2(576, 0)
+rotation = 3.14159
+
+[node name="WallBotton" parent="Walls" instance=ExtResource("5_df4gl")]
+position = Vector2(576, 648)

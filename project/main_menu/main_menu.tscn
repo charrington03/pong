@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmhh743gjhagd"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_cdh12"]
+[ext_resource type="Script" path="res://main_menu/new_game_form.gd" id="2_caqfe"]
+
+[sub_resource type="Theme" id="Theme_nrudp"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_nrudp")
+script = ExtResource("1_cdh12")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 102.0
+offset_right = 296.0
+offset_bottom = 128.0
+text = "it's just pong lets fucking go"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 210.0
+offset_right = 268.0
+offset_bottom = 250.0
+
+[node name="NewGameForm" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 272.0
+offset_right = 310.0
+offset_bottom = 344.0
+script = ExtResource("2_caqfe")
+
+[node name="Label" type="Label" parent="NewGameForm"]
+layout_mode = 2
+text = "Points to win"
+
+[node name="PointsHBox" type="HBoxContainer" parent="NewGameForm"]
+layout_mode = 2
+
+[node name="MinutButton" type="Button" parent="NewGameForm/PointsHBox"]
+layout_mode = 2
+text = " - "
+
+[node name="PointsLabel" type="Label" parent="NewGameForm/PointsHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "11"
+horizontal_alignment = 1
+
+[node name="PlusButton" type="Button" parent="NewGameForm/PointsHBox"]
+layout_mode = 2
+text = " + "
+
+[node name="StartButton" type="Button" parent="NewGameForm"]
+layout_mode = 2
+text = "Start Game"
+
+[connection signal="pressed" from="NewGameForm/PointsHBox/MinutButton" to="NewGameForm" method="_on_minut_button_pressed"]
+[connection signal="pressed" from="NewGameForm/PointsHBox/PlusButton" to="NewGameForm" method="_on_plus_button_pressed"]
+[connection signal="pressed" from="NewGameForm/StartButton" to="NewGameForm" method="_on_start_button_pressed"]

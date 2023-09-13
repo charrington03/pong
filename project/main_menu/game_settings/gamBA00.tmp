@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw37xbt6g56wu"]
+
+[ext_resource type="Script" path="res://main_menu/game_settings/game_settings_tree.gd" id="1_yxh5t"]
+
+[node name="GameSettingsTree" type="Tree"]
+script = ExtResource("1_yxh5t")
