@@ -1,0 +1,65 @@
+==========
+This is just ideation for what a version plan could look like.
+Don't take it to heart, I'm just jotting down my thoughts so I can stay on track.
+==========
+Annotations
+- (?) denotes items to re-think. Maybe they're too hard and need to be done later, maybe I don't even want them
+- ** denotes a general state of the game, not just a feature
+==========
+
+
+1.0
+- Working game
+
+
+1.1
+- "Additional Settings" panel
+- Main menu background
+- Custom styles
+	- Font
+	- Buttons and panels
+
+
+1.2
+- Proper start menu
+	- "Additional Settings" panel cleaned up
+		- Better UI layout
+		- Better theming (range picker is still gray, maybe even remove these)
+		- Fix range picker (waiting on Godot updates)
+	- "Settings" page
+- Proper win screen
+- Consistent theming
+	- Clean up theme files
+	- The "normal-button" texture is being used for all panels now,
+	    this should probably change
+
+
+1.3
+- Multiplayer
+- Settings for multiplayer
+
+
+1.4
+- Power-ups
+- Settings for power-ups
+** should be able to send to people **
+
+
+1.5
+- Bot player (?)
+
+
+1.6
+- More power-ups
+	- Think about rotating objects
+	- Obstacles in the field
+- Custom/randon power-ups (?)
+
+
+1.7
+- 2v2 lmao (?)
+
+
+
+2.0
+** should be able to publish **
