@@ -1,9 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmhh743gjhagd"]
+[gd_scene load_steps=6 format=3 uid="uid://cmhh743gjhagd"]
 
+[ext_resource type="Theme" uid="uid://40vg4yog6nuq" path="res://assets/themes/main_theme.tres" id="1_5abe1"]
 [ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_cdh12"]
 [ext_resource type="Script" path="res://main_menu/new_game_form.gd" id="2_caqfe"]
-
-[sub_resource type="Theme" id="Theme_nrudp"]
+[ext_resource type="PackedScene" uid="uid://dmmkfp7uec23h" path="res://main_menu/game_settings/settings_panel.tscn" id="5_6m5fy"]
+[ext_resource type="PackedScene" uid="uid://d1wwdp2tvid5h" path="res://main_menu/background/menu_bg.tscn" id="5_t8oly"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -12,23 +13,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_nrudp")
+theme = ExtResource("1_5abe1")
 script = ExtResource("1_cdh12")
+
+[node name="MenuBg" parent="." instance=ExtResource("5_t8oly")]
 
 [node name="TitleLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 102.0
-offset_right = 296.0
-offset_bottom = 128.0
+offset_left = 59.0
+offset_top = 86.0
+offset_right = 417.0
+offset_bottom = 119.0
+theme_override_font_sizes/font_size = 32
 text = "it's just pong lets fucking go"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 175.0
-offset_top = 210.0
-offset_right = 268.0
-offset_bottom = 250.0
 
 [node name="NewGameForm" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -63,6 +60,12 @@ text = " + "
 layout_mode = 2
 text = "Start Game"
 
+[node name="SettingsPanel" parent="." instance=ExtResource("5_6m5fy")]
+offset_left = 640.0
+offset_top = 168.0
+offset_right = 640.0
+offset_bottom = 168.0
+
 [connection signal="pressed" from="NewGameForm/PointsHBox/MinutButton" to="NewGameForm" method="_on_minut_button_pressed"]
 [connection signal="pressed" from="NewGameForm/PointsHBox/PlusButton" to="NewGameForm" method="_on_plus_button_pressed"]
-[connection signal="pressed" from="NewGameForm/StartButton" to="NewGameForm" method="_on_start_button_pressed"]
+[connection signal="pressed" from="NewGameForm/StartButton" to="." method="_on_start_button_pressed"]

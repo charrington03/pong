@@ -27,7 +27,6 @@ func _init():
 
 
 func _ready():
-	print(points_to_win)
 	LeftGoal.connect("ball_entered", score_right)
 	RightGoal.connect("ball_entered", score_left)
 
@@ -64,7 +63,6 @@ func on_score():
 		return
 	
 	GameBall = new_ball()
-	GameBall.paused = true
 	self.add_child(GameBall)
 	reset_paddle_pos()
 	

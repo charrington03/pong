@@ -15,6 +15,9 @@ func _init():
 	max_speed = GameSettings.max_ball_speed.val
 	min_speed = GameSettings.min_ball_speed.val
 	bounce_index = GameSettings.ball_bounce_index.val
+	
+	# Keep it paused by default
+	paused = true
 
 func _ready():
 	speed = init_speed

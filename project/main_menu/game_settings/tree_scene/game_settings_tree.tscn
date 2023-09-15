@@ -3,4 +3,10 @@
 [ext_resource type="Script" path="res://main_menu/game_settings/tree_scene/game_settings_tree.gd" id="1_xyvnd"]
 
 [node name="GameSettingsTree" type="Tree"]
+clip_contents = false
+columns = 2
+hide_folding = true
+hide_root = true
+scroll_horizontal_enabled = false
+scroll_vertical_enabled = false
 script = ExtResource("1_xyvnd")

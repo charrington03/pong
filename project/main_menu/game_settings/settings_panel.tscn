@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dmmkfp7uec23h"]
+
+[ext_resource type="PackedScene" uid="uid://x0xwmnwp31o2" path="res://main_menu/game_settings/tree_scene/game_settings_tree.tscn" id="1_by87a"]
+[ext_resource type="Script" path="res://main_menu/game_settings/settings_panel.gd" id="1_ufhk0"]
+[ext_resource type="Texture2D" uid="uid://c8p7ncatqcl1x" path="res://assets/icons/reload-icon-16x16.png" id="1_w5isn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nwrcd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3news"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d8vm2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h1mvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rr5cq"]
+
+[node name="SettingsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ufhk0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Additional Settings"
+
+[node name="ResetButton" type="Button" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+tooltip_text = "Reset to default"
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_nwrcd")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3news")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_d8vm2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_h1mvj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rr5cq")
+text = " Reset"
+icon = ExtResource("1_w5isn")
+flat = true
+
+[node name="GameSettingsTree" parent="VBoxContainer" instance=ExtResource("1_by87a")]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ResetButton" to="." method="_on_reset_button_pressed"]

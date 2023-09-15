@@ -19,12 +19,8 @@ func minus_points():
 	PointsLabel.text = str(points)
 	
 
-
-
-func _on_start_button_pressed():
+func apply_settings():
 	Global.points_to_win = points
-	get_tree().change_scene_to_file("res://game/game.tscn")
-
 
 func _on_minut_button_pressed():
 	minus_points()

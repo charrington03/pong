@@ -1,0 +1,22 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://40vg4yog6nuq"]
+
+[ext_resource type="FontFile" uid="uid://fdpfk1152g5k" path="res://assets/fonts/rainyhearts.ttf" id="1_boaqx"]
+[ext_resource type="StyleBox" uid="uid://c54xfpuoy6arl" path="res://assets/themes/button/button_style_hover.tres" id="2_2iblh"]
+[ext_resource type="StyleBox" uid="uid://b87nrpy5uvwpf" path="res://assets/themes/button/button_style_disabled.tres" id="2_w3tws"]
+[ext_resource type="StyleBox" uid="uid://dhbevs1h8tic0" path="res://assets/themes/button/button_style_normal.tres" id="2_y56ed"]
+[ext_resource type="StyleBox" uid="uid://c4j4qyfskci1r" path="res://assets/themes/button/button_style_pressed.tres" id="3_kjqtk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c6cnq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a286n"]
+
+[resource]
+default_font = ExtResource("1_boaqx")
+Button/fonts/font = ExtResource("1_boaqx")
+Button/styles/disabled = ExtResource("2_w3tws")
+Button/styles/focus = SubResource("StyleBoxEmpty_c6cnq")
+Button/styles/hover = ExtResource("2_2iblh")
+Button/styles/normal = ExtResource("2_y56ed")
+Button/styles/pressed = ExtResource("3_kjqtk")
+Tree/styles/focus = SubResource("StyleBoxEmpty_a286n")
+Tree/styles/panel = ExtResource("2_y56ed")
